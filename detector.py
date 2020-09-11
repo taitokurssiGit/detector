@@ -10,6 +10,6 @@ print(data_dict['2000'])
 # TODO: a neat loop: 
 i = 1
 while i != 0:
-    i = input("Enter a year or quit by entering 0: ")
+    i = input("Enter a year between 1900–2020 or quit by entering 0: ")
     if float(data_dict[i]) - float(data_dict[str(int(i) - 1)]) > 0:
         print("It's getting bigger")
