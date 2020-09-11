@@ -3,7 +3,7 @@ from data.data_get import data_read
 
 data_dict = data_read()
 
-# Minor problem: keys are not integers.
+# Minor problem: keys are not integers. 
 # TODO: How to convert keys from str to int?
 print(data_dict['2000'])
 
