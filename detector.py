@@ -1,15 +1,21 @@
-# Imports a function from a subfolder to provide data in dictionary format into this program: 
+# Imports a function data_read from a selfmade module 'data_get' residing in a subfolder 'data'. 
+# This function provides some data in a dictionary format into this main program: 
 from data.data_get import data_read
 
 data_dict = data_read()
 
-# Minor problem: keys are not integers. 
-# TODO: How to convert keys from str to int?
-print(data_dict['2000'])
+# Minor problem: keys are not integers. TODO: How to convert keys from str to int?
+print("Testing the data by printing the value for the year 2000: ", data_dict['2000'], sep='\n')
 
-# TODO: a neat loop: 
-i = 1
-while i != 0:
-    i = input("Enter a year between 1900–2020 or quit by entering 0: ")
+while True:
+    i = input("Enter a year between 1901–2020: ") # TODO: test the input. 
     if float(data_dict[i]) - float(data_dict[str(int(i) - 1)]) > 0:
-        print("It's getting bigger")
+        print(f"It's getting BIGGER between {int(i) - 1}–{i}.")
+    else:
+        print(f"It's getting smaller between {int(i) - 1}–{i}.")
+    
+    decision = input("Do you want to test another year? (Y/N): ")
+
+    if decision == ("N" or "n"):
+        print("Program has been terminated.")
+        break

@@ -1,6 +1,6 @@
 def data_read() -> dict:
     """This script is used to read data into python. The data is provided as a csv-file. 
-    TODO: Learn how to read a CSV-file "data_ready.csv" from a subfolder "data"?
+    TODO: Learn how to read a CSV-file "data_raw.csv" from a subfolder "data"?
     In the meantime, we use a hard coded dictionary obtained by a script from stackoverflow.com found  here below.
 
     Returns:
@@ -16,9 +16,9 @@ def data_read() -> dict:
 import csv
 
 #TODO: Below the "full_path" should be changed to the actual path in your system:
-with open('/full_path/data/data_ready.csv', mode='r') as infile:
+with open('/full_path/data/data_raw.csv', mode='r') as infile:
     reader = csv.reader(infile)
-    with open('data_ready_new.csv', mode='w') as outfile:
+    with open('data_raw_new.csv', mode='w') as outfile:
         writer = csv.writer(outfile)
         mydict = {rows[0]:rows[1] for rows in reader}
 print(mydict)
