@@ -1,2 +1,3 @@
 # detector
-[testailua]
+
+Coming soon... You can query annual differences. 
