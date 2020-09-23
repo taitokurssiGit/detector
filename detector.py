@@ -1,6 +1,6 @@
 # Imports a function 'data_read' from a selfmade module 'data_get' residing in a subfolder 'data'. 
 # That function provides some data in a dictionary format into this main program. 
-from data.data_get import data_read
+from data_get import data_read
 
 data_dict = data_read()
 
