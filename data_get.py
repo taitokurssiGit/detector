@@ -1,5 +1,12 @@
 def data_read() -> dict:
-    """This script is used to read data into python. The data is provided as a csv-file in a subfolder 'data'. 
+    """This data wrangling script is used to read data into python. \
+        The raw data is provided as a csv-file in a subfolder 'data'. \
+        Here we preprocess a data set for further use. \
+        
+        Data description: \
+            TBA 
+        Data source: \
+            TBA <date>
 
     Returns:
         dict: A key is a year, a value is a float. 
@@ -7,7 +14,7 @@ def data_read() -> dict:
     import csv
 
     try:
-        with open('./data/data_raw.csv', mode='r') as infile:
+        with open('data/data_raw.csv', mode='r') as infile:
             reader = csv.reader(infile)
             data_dict = {int(rows[0]): float(rows[1]) for rows in reader}
         return data_dict

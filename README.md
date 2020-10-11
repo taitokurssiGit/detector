@@ -1,3 +1,5 @@
-# detector
+# Be Detected™! :)
+Coming soon... You can query annual increments.
 
-Coming soon... You can query annual differences. 
+## A tool for open data science
+With openly available raw data and tools you can conduct reproducible research. 

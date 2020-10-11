@@ -1,18 +1,14 @@
-# Imports a function 'data_read' from a module 'data_get'. 
-#                       TODO: ...from a module 'data_get' residing in a subfolder 'data'. 
-
 try:
-    from data_get import data_read # or: from data.data_get import data_read
-    # This function provides some data in a dictionary format into this main program:
+    from data_get import data_read
+    # This function provides some data in a dictionary format into this main program. 
+    # The data is described in the function itself. 
     data_dict = data_read()
 
 except ModuleNotFoundError as import_e:
     print(import_e, sep='\n')
 
 except FileNotFoundError as file_error:
-    print(file_error, """Check that your current folder is the same where this detector.py script is located. 
-    Launch the program there by commanding
-    python detector.py""", sep='\n')
+    print(file_error, """Check that your current working directory is the same where this detector.py script is located.""", sep='\n')
 
 except:
     import sys
@@ -27,7 +23,7 @@ else:
         if data_dict[x] - data_dict[x - 1] > 0:
             print(f"It got BIGGER between {x - 1}–{x}.") # TODO: print also some values (compare also to x-10), e.g. increase in percentage: lambda x: ((data_dict[x] - data_dict[x - 1]) / data_dict[x - 1]) * 100
         else:
-            print(f"That was extremely lucky! It got smaller between {x - 1}–{x}.")
+            print(f"That was extremely lucky! It got smaller between {x - 1}–{x}.") # TODO: If value is increasing every year, remove this. 
         
         again = input("Do you want to test another year? (Y/N): ")
 
