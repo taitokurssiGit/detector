@@ -17,4 +17,4 @@ python detector.py
 ## References
 Data sources:
 * Dr. Pieter Tans, NOAA/GML (www.esrl.noaa.gov/gmd/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/)
-* Mauna Loa CO<sub>2</sub> annual mean data (CSV), [ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.csv]. Downloaded on 2020-10-27.
+* Mauna Loa CO<sub>2</sub> annual mean data (<a href="ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.csv">CSV</a>). Downloaded on 2020-10-27.
