@@ -10,7 +10,7 @@ from data_get import data_read
 
 class SimpleTest(unittest.TestCase):
 
-    def test_data_read1(self): # TODO: How to fix this to catch FileNotFoundError?
+    def test_data_read1(self):
         with self.assertRaises(FileNotFoundError):
             data_read()
 
