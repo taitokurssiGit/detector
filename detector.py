@@ -1,3 +1,5 @@
+import sys
+
 try:
     from data_get import data_read
     # This function provides some data in a dictionary format into this main program. 
@@ -11,21 +13,24 @@ except FileNotFoundError as file_error:
     print(file_error, """Check that your current working directory is the same where this detector.py script is located.""", sep='\n')
 
 except:
-    import sys
     print("Unexpected error:", sys.exc_info()[0])
     raise    
 
-else:
-    #TODO: code the following functionally without while loop?
+else: 
+    # Get the available time interval, i.e. the smallest and the biggest keys:
+    year_start = min(data_dict.keys())
+    year_end = max(data_dict.keys())
 
     while True:
-        x = int(input("Enter a year between 1901–2020: ")) # TODO: 1) Make tests for possible malformated inputs. 2) Remove hard coded years. 
-        if data_dict[x] - data_dict[x - 1] > 0:
-            print(f"It got BIGGER between {x - 1}–{x}.") # TODO: print also some values (compare also to x-10), e.g. increase in percentage: lambda x: ((data_dict[x] - data_dict[x - 1]) / data_dict[x - 1]) * 100
-        else:
-            print(f"That was extremely lucky! It got smaller between {x - 1}–{x}.") # TODO: If value is increasing every year, remove this. 
+        x = int(input(f"Enter a year between {year_start + 1}–{year_end}: ")) # TODO: 1) Make tests for possible malformated inputs.
         
-        again = input("Do you want to test another year? (Y/N): ")
+        if data_dict[x] - data_dict[x - 1] > 0:
+            print(f"It increased between {x - 1}–{x}.") # TODO: print also some values (compare also to x-10), e.g. increase in percentage: lambda x: ((data_dict[x] - data_dict[x - 1]) / data_dict[x - 1]) * 100
+        
+        ''' else:
+            print(f"That was extremely lucky! It decreased between {x - 1}–{x}.") # TODO: When values start to decrease, uncomment and finalize this. '''
+
+        again = input("Do you want to continue? (Y/N): ")
 
         if again.lower() == "n":
             print("That's the spirit. Good bye!")
